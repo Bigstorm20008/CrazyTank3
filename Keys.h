@@ -6,7 +6,9 @@ enum class Key{
 	ARROW_DOWN = 80,
 	ARROW_RIGHT = 77,
 	ARROW_LEFT = 75,
-	SPACE = 32
+	SPACE = 32,
+	Q = 81,
+	q = 113
 };
 
 #endif // !KEYS_H

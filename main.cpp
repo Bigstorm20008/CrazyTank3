@@ -1,6 +1,7 @@
-#include "vld.h"
+//#include "vld.h"
 
 #include "GameController.h"
+
 
 int main()
 {	
@@ -8,3 +9,5 @@ int main()
 	gameController.initialize();
 	return gameController.run();
 }
+
+

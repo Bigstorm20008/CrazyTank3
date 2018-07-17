@@ -1,7 +1,7 @@
 #include "GameController.h"
 
 
-GameController::GameController() : isInitialized_{ false }, isGameActive_{ false }, eventQueue_{}, input_{}, game_{}
+GameController::GameController() : isInitialized_{ false }, isGameActive_{ false }, eventQueue_{}, input_{}, game_{}, consoleView_{}
 {
 }
 
@@ -13,19 +13,33 @@ GameController::~GameController()
 		delete input_;
 		input_ = nullptr;
 	}
+
 	if (game_ != nullptr)
 	{
 		delete game_;
 		game_ = nullptr;
+	}
+
+	if (consoleView_ != nullptr)
+	{
+		delete consoleView_;
+		consoleView_ = nullptr;
 	}
 }
 
 
 void GameController::initialize()
 {
-	input_ = new Input(eventQueue_);
-	game_ = new Game();
-	eventQueue_.attach(game_);
+	input_ = new Input{ eventQueue_ };
+
+	consoleView_ = new ConsoleView{};
+	consoleView_->initialize(40, 20);
+	
+	GraficsBuffer& backBuffer = consoleView_->getBackBuffer();
+	game_ = new Game{ eventQueue_ , backBuffer};
+	game_->initialize();
+	eventQueue_.attach( game_ );
+
 	isInitialized_ = true;
 }
 
@@ -44,16 +58,18 @@ const int GameController::run()
 
 void GameController::gameLoop()
 {
-	while (isGameActive_)
+	while (isGameActive_ == true)
 	{
 		if (_kbhit())
 		{
-			Key key = static_cast<Key>(_getch());
-			input_->inputHandler(key);
+			const Key key { static_cast<Key>(_getch()) };
+			input_->inputHandler( key );
 		}
 
 		eventQueue_.sendNextEvent();
-		//game->update();
-		//view->render();
+		game_->update();
+		consoleView_->render();
+
+		isGameActive_ = game_->isActiveState();
 	}
 }

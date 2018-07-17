@@ -13,7 +13,7 @@ namespace events
 		explicit GameEvent(const Event& eventId);
 		virtual ~GameEvent();
 		
-		const Event getId()const;
+		const Event& getId()const;
 	private:
 		const Event id_;
 	};

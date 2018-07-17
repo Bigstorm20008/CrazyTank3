@@ -1,41 +1,46 @@
 #include "Game.h"
 
 
-Game::Game()
+Game::Game(EventQueue& eventQueue, GraficsBuffer& backGraficsBuffer) : eventQueue_{ &eventQueue }, 
+                                                                       graficsBuffer_{ &backGraficsBuffer }, 
+																	   gameState_{}, isActive_{ false }
 {
 }
 
 
 Game::~Game()
 {
+	gameState_.reset();
+}
+
+
+void Game::initialize()
+{
+	gameState_.reset( new MainMenuState{ *eventQueue_ , *graficsBuffer_ } );
+	isActive_ = true;
 }
 
 
 void Game::update()
 {
-
+	gameState_->update();
 }
 
 
 void Game::processEvent(const events::GameEvent& gameEvent)
 {
-	
-	auto ev = gameEvent.getId();
-	switch (ev)
+	if (gameEvent.getId() == Event::QUIT_GAME)
 	{
-	case Event::SPACE_KEY_PRESSED:
-	{
-		std::cout << "Space key pressed" << std::endl;
-		break;
+		isActive_ = false;
 	}
-
-	case Event::UP_ARROW_KEY_PRESSED:
-	{
-		std::cout << "Up arrow key pressed" << std::endl;
-		break;
-	}
-
-	default:
-		break;
+	else {
+		gameState_->processEvent(gameEvent);
 	}
 }
+
+
+const bool  Game::isActiveState() const
+{
+	return isActive_;
+}
+

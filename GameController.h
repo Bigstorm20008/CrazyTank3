@@ -3,9 +3,11 @@
 
 #include <conio.h>
 
+
 #include "EventQueue.h"
 #include "Input.h"
 #include "Game.h"
+#include "ConsoleView.h"
 
 class GameController
 {
@@ -19,9 +21,11 @@ public:
 private:
 	bool isInitialized_;
 	bool isGameActive_;
+
 	EventQueue eventQueue_;
 	Input* input_;
 	Game* game_;
+	ConsoleView* consoleView_;
 
 	void gameLoop();
 };

@@ -82,25 +82,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="GraficsBuffer.h" />
+    <ClInclude Include="ConsoleView.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameController.h" />
     <ClInclude Include="GameEvent.h" />
     <ClInclude Include="EventObserver.h" />
     <ClInclude Include="EventQueue.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Keys.h" />
+    <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="Observable.h" />
+    <ClInclude Include="PauseState.h" />
+    <ClInclude Include="Point.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GraficsBuffer.cpp" />
+    <ClCompile Include="ConsoleView.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameController.cpp" />
     <ClCompile Include="GameEvent.cpp" />
     <ClCompile Include="EventObserver.cpp" />
     <ClCompile Include="EventQueue.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Observable.cpp" />
+    <ClCompile Include="PauseState.cpp" />
+    <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
