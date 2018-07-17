@@ -29,17 +29,20 @@ void ConsoleView::render()
 	HANDLE consoleOuput = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD scrn;
 
-	for (int i = 0; i != backBuffer_.graficsBuffer_.size(); ++i)
+	auto& backBufferSymbols = backBuffer_.graficsBuffer_;
+	auto& frontBufferSymbols = frontBuffer_.graficsBuffer_;
+
+	for (int i = 0; i != backBufferSymbols.size(); ++i)
 	{
-		for (int j = 0; j != backBuffer_.graficsBuffer_[i].size(); ++j)
+		for (int j = 0; j != backBufferSymbols[i].size(); ++j)
 		{
-			if (backBuffer_.graficsBuffer_[i][j] != frontBuffer_.graficsBuffer_[i][j])
+			if (backBufferSymbols[i][j] != frontBufferSymbols[i][j])
 			{
 				scrn.X = j;
 				scrn.Y = i;
 				SetConsoleCursorPosition(consoleOuput, scrn);
-				std::wcout << backBuffer_.graficsBuffer_[i][j];
-				frontBuffer_.graficsBuffer_[i][j] = backBuffer_.graficsBuffer_[i][j];
+				std::wcout << backBufferSymbols[i][j];
+				frontBufferSymbols[i][j] = backBufferSymbols[i][j];
 			}
 		}
 	}
