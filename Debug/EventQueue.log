@@ -1,9 +1,8 @@
-﻿Сборка начата 20.07.2018 6:59:33.
+﻿Сборка начата 20.07.2018 9:15:13.
      1>Проект "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Game.cpp GameController.cpp Input.cpp main.cpp
-         Input.cpp
-         Game.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt ConsoleView.cpp GameController.cpp main.cpp
+         ConsoleView.cpp
          Создание кода...
          Компиляция...
          main.cpp
@@ -34,4 +33,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:06.13
+Затраченное время: 00:00:05.49
