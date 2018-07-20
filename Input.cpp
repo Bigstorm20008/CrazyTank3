@@ -16,29 +16,52 @@ void Input::inputHandler(const Key& key)const
 	{
 		case Key::SPACE :
 		{
-			events::GameEvent currentEvent { Event::SPACE_KEY_PRESSED };
-			eventQueue_->addEvent(std::move( currentEvent ));
+			eventQueue_->addEvent({ Event::SPACE_KEY_PRESSED });
 			break;
 		}
 
-		case Key::ARROW_UP:
+		case Key::ARROW_UP :
 		{
-			events::GameEvent currentEvent { Event::UP_ARROW_KEY_PRESSED };
-			eventQueue_->addEvent(std::move( currentEvent ));
+			eventQueue_->addEvent({ Event::UP_ARROW_KEY_PRESSED });
 			break;
 		}
 
 		case Key::ARROW_LEFT :
+		{
+			eventQueue_->addEvent({ Event::LEFT_ARROW_KEY_PRESSED });
 			break;
+		}
 
 		case Key::ARROW_RIGHT :
+		{
+			eventQueue_->addEvent({ Event::RIGHT_ARROW_KEY_PRESSED });
 			break;
+		}
+
+		/*case Key::ARROW_DOWN:
+		{
+			eventQueue_->addEvent({ Event::DOWN_ARROW_KEY_PRESSED });
+			break;
+		}*/
 
 		case Key::Q :
 		case Key::q :
 		{
-			events::GameEvent currentEvent { Event::QUIT_GAME };
-			eventQueue_->addEvent(std::move(currentEvent));
+			eventQueue_->addEvent({ Event::QUIT_GAME });
+			break;
+		}
+
+		case Key::S :
+		case Key::s :
+		{
+			eventQueue_->addEvent({ Event::START_GAME });
+			break;
+		}
+
+		case Key::P:
+		case Key::p:
+		{
+			eventQueue_->addEvent({ Event::PAUSE_GAME });
 			break;
 		}
 

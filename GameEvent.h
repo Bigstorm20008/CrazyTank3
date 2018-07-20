@@ -10,7 +10,7 @@ namespace events
 	{
 
 	public:
-		explicit GameEvent(const Event& eventId);
+		GameEvent(const Event& eventId);
 		virtual ~GameEvent();
 		
 		const Event& getId()const;

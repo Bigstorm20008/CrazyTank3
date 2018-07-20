@@ -12,7 +12,7 @@ public:
 	virtual ~GameState();
 
 	virtual void initialize() = 0;
-	virtual void processEvent(const events::GameEvent& gameEvent) = 0;
+	virtual void processEvent(const Event& Event) = 0;
 	virtual void update() = 0;
 
 protected:

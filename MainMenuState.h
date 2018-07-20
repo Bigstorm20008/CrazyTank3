@@ -2,6 +2,7 @@
 #define MAIN_MENU_STATE_H
 
 #include "GameState.h"
+#include "GameplayConstans.h"
 
 class MainMenuState : public GameState
 {
@@ -10,11 +11,8 @@ public:
 	~MainMenuState();
 
 	void initialize() override;
-	void processEvent(const events::GameEvent& gameEvent) override;
+	void processEvent(const Event& event) override;
 	void update() override;
-
-private:
-	Point startPos_;
 };
 
 

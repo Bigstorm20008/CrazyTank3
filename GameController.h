@@ -3,11 +3,12 @@
 
 #include <conio.h>
 
-
 #include "EventQueue.h"
 #include "Input.h"
 #include "Game.h"
 #include "ConsoleView.h"
+#include "ConsoleConstants.h"
+
 
 class GameController
 {

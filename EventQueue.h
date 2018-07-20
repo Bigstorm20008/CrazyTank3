@@ -17,12 +17,38 @@ public:
 	EventQueue();
 	~EventQueue();
 
+	void addEvent(const events::GameEvent&& gameEvent);
 	void addEvent(const events::GameEvent& gameEvent);
+
 	void sendNextEvent();
 
 private:
 	std::queue<const events::GameEvent> eventsQueue_;
 };
+
+
+
+
+inline void EventQueue::addEvent(const events::GameEvent&& gameEvent)
+{
+	eventsQueue_.emplace(std::move(gameEvent));
+}
+
+
+inline void EventQueue::addEvent(const events::GameEvent& gameEvent)
+{
+	eventsQueue_.emplace(gameEvent);
+}
+
+
+inline void EventQueue::sendNextEvent()
+{
+	if (eventsQueue_.empty() == false)
+	{
+		notify(eventsQueue_.front());
+		eventsQueue_.pop();
+	}
+}
 
 
 #endif // !EVENT_QUEUE_H

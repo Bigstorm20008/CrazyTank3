@@ -21,6 +21,7 @@ public:
 	void drawText(const Point& startPoint, const Direction& textDirection, const std::wstring& text);
 
 	const unsigned int& getWidth()const;
+	
 	const unsigned int& getHeight()const;
 
 	void clear();

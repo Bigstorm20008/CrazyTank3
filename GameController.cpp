@@ -32,8 +32,10 @@ void GameController::initialize()
 {
 	input_ = new Input{ eventQueue_ };
 
+	
 	consoleView_ = new ConsoleView{};
-	consoleView_->initialize(40, 20);
+	ConsoleConstants consoleConstants;
+	consoleView_->initialize( consoleConstants.getDefaultWidth(), consoleConstants.getDefaultHeight() );
 	
 	GraficsBuffer& backBuffer = consoleView_->getBackBuffer();
 	game_ = new Game{ eventQueue_ , backBuffer};

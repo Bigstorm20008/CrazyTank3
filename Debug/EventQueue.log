@@ -1,10 +1,19 @@
-﻿Сборка начата 17.07.2018 20:29:48.
+﻿Сборка начата 20.07.2018 6:59:33.
      1>Проект "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt ConsoleView.cpp
-         ConsoleView.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Game.cpp GameController.cpp Input.cpp main.cpp
+         Input.cpp
+         Game.cpp
+         Создание кода...
+         Компиляция...
+         main.cpp
+         GameController.cpp
+         Создание кода...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.lib" /MACHINE:X86 Debug\GraficsBuffer.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.lib" /MACHINE:X86 Debug\ConsoleConstants.obj
+         Debug\GameplayConstans.obj
+         Debug\GameRunnigState.obj
+         Debug\GraficsBuffer.obj
          Debug\ConsoleView.obj
          Debug\Game.obj
          Debug\GameController.obj
@@ -20,9 +29,9 @@
          Debug\Point.obj
          EventQueue.vcxproj -> D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.exe
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.bsc" /n Debug\GraficsBuffer.sbr Debug\ConsoleView.sbr Debug\Game.sbr Debug\GameController.sbr Debug\GameEvent.sbr Debug\EventObserver.sbr Debug\EventQueue.sbr Debug\GameState.sbr Debug\Input.sbr Debug\main.sbr Debug\MainMenuState.sbr Debug\Observable.sbr Debug\PauseState.sbr Debug\Point.sbr
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.bsc" /n Debug\ConsoleConstants.sbr Debug\GameplayConstans.sbr Debug\GameRunnigState.sbr Debug\GraficsBuffer.sbr Debug\ConsoleView.sbr Debug\Game.sbr Debug\GameController.sbr Debug\GameEvent.sbr Debug\EventObserver.sbr Debug\EventQueue.sbr Debug\GameState.sbr Debug\Input.sbr Debug\main.sbr Debug\MainMenuState.sbr Debug\Observable.sbr Debug\PauseState.sbr Debug\Point.sbr
      1>Сборка проекта "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:03.59
+Затраченное время: 00:00:06.13

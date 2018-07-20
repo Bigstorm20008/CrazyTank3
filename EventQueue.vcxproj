@@ -82,7 +82,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleConstants.h" />
     <ClInclude Include="Direction.h" />
+    <ClInclude Include="GameplayConstans.h" />
+    <ClInclude Include="GameRunnigState.h" />
     <ClInclude Include="GraficsBuffer.h" />
     <ClInclude Include="ConsoleView.h" />
     <ClInclude Include="Events.h" />
@@ -100,6 +103,9 @@
     <ClInclude Include="Point.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConsoleConstants.cpp" />
+    <ClCompile Include="GameplayConstans.cpp" />
+    <ClCompile Include="GameRunnigState.cpp" />
     <ClCompile Include="GraficsBuffer.cpp" />
     <ClCompile Include="ConsoleView.cpp" />
     <ClCompile Include="Game.cpp" />

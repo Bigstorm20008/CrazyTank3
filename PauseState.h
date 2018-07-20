@@ -3,12 +3,15 @@
 
 #include "GameState.h"
 
-class PauseState :
-	public GameState
+class PauseState : public GameState
 {
 public:
 	PauseState(EventQueue& eventQueue, GraficsBuffer& graficsBuffer);
 	~PauseState();
+
+	void initialize()override;
+	void processEvent(const Event& Event)override;
+	void update()override;
 };
 
 #endif // !PAUSE_STATE_H

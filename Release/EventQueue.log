@@ -1,17 +1,25 @@
-﻿Сборка начата 13.07.2018 19:08:31.
+﻿Сборка начата 18.07.2018 14:28:39.
      1>Проект "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt EventQueue.cpp main.cpp
-         EventQueue.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ConsoleView.cpp
+         ConsoleView.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.lib" /MACHINE:X86 /SAFESEH Release\Event.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.lib" /MACHINE:X86 /SAFESEH Release\ConsoleConstants.obj
+         Release\GameplayConstans.obj
+         Release\GraficsBuffer.obj
+         Release\ConsoleView.obj
+         Release\Game.obj
+         Release\GameController.obj
+         Release\GameEvent.obj
          Release\EventObserver.obj
          Release\EventQueue.obj
+         Release\GameState.obj
+         Release\Input.obj
          Release\main.obj
+         Release\MainMenuState.obj
          Release\Observable.obj
-         Release\Test.obj
-         Release\Test2.obj
+         Release\PauseState.obj
+         Release\Point.obj
          Создание кода
          Создание кода завершено
          EventQueue.vcxproj -> D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.exe
@@ -19,4 +27,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:02.45
+Затраченное время: 00:00:01.45
