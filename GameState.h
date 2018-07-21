@@ -5,20 +5,25 @@
 #include "EventQueue.h"
 #include "GraficsBuffer.h"
 
-class GameState
+namespace gamestates
 {
-public:
-	explicit GameState(EventQueue& eventQueue, GraficsBuffer& graficsBuffer);
-	virtual ~GameState();
 
-	virtual void initialize() = 0;
-	virtual void processEvent(const Event& Event) = 0;
-	virtual void update() = 0;
+	class GameState
+	{
+	public:
+		explicit GameState(EventQueue& eventQueue, GraficsBuffer& graficsBuffer);
+		virtual ~GameState();
 
-protected:
-	EventQueue* const eventQueue_;
-	GraficsBuffer* const graficsBuffer_;
-};
+		virtual void initialize() = 0;
+		virtual void processEvent(const enumarations::Event& Event) = 0;
+		virtual void update() = 0;
+
+	protected:
+		EventQueue* const eventQueue_;
+		GraficsBuffer* const graficsBuffer_;
+	};
+
+}//namespace gamestates
 
 #endif // !GAME_STATE_H
 

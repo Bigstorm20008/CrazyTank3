@@ -4,17 +4,21 @@
 #include "GameState.h"
 #include "GameplayConstans.h"
 
-class MainMenuState : public GameState
+namespace gamestates
 {
-public:
-	MainMenuState(EventQueue& eventQueue, GraficsBuffer& graficsBuffer);
-	~MainMenuState();
 
-	void initialize() override;
-	void processEvent(const Event& event) override;
-	void update() override;
-};
+	class MainMenuState : public GameState
+	{
+	public:
+		MainMenuState(EventQueue& eventQueue, GraficsBuffer& graficsBuffer);
+		~MainMenuState();
 
+		void initialize() override;
+		void processEvent(const enumarations::Event& event) override;
+		void update() override;
+	};
+
+}//namespace gamestates
 
 #endif // !MAIN_MENU_STATE_H
 

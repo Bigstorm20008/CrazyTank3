@@ -50,22 +50,25 @@ void GraficsBuffer::drawSymbol(const unsigned int& x, const unsigned int& y, con
 	}
 }
 
+
 const unsigned int& GraficsBuffer::getWidth() const
 {
 	return width_;
 }
+
 
 const unsigned int& GraficsBuffer::getHeight() const
 {
 	return height_;
 }
 
-void GraficsBuffer::drawText(const Point& startPoint, const Direction& textDirection, const std::wstring& text)
+
+void GraficsBuffer::drawText(const helpers::Point& startPoint, const enumarations::Direction& textDirection, const std::wstring& text)
 {
 	const unsigned int textLenght = text.length();
-	Point currentPoint = startPoint;
+	helpers::Point currentPoint = startPoint;
 	switch (textDirection){
-		case Direction::UP :
+	case enumarations::Direction::UP:
 		{
 			unsigned int textIndex = 0;
 			while (textIndex < textLenght)
@@ -77,7 +80,7 @@ void GraficsBuffer::drawText(const Point& startPoint, const Direction& textDirec
 			break;
 		}
 
-		case Direction::DOWN :
+	case enumarations::Direction::DOWN:
 		{
 			unsigned int textIndex = 0;
 			while (textIndex < textLenght)
@@ -89,7 +92,7 @@ void GraficsBuffer::drawText(const Point& startPoint, const Direction& textDirec
 			break;
 		}
 
-		case Direction::LEFT :
+	case enumarations::Direction::LEFT:
 		{
 			unsigned int textIndex = 0;
 			while (textIndex < textLenght)
@@ -101,7 +104,7 @@ void GraficsBuffer::drawText(const Point& startPoint, const Direction& textDirec
 			break;
 		}
 
-		case Direction::RIGHT :
+	case enumarations::Direction::RIGHT:
 		{
 			unsigned int textIndex = 0;
 			while (textIndex < textLenght)

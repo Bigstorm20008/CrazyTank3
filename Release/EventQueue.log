@@ -1,20 +1,13 @@
-﻿Сборка начата 20.07.2018 10:04:44.
+﻿Сборка начата 21.07.2018 15:18:17.
      1>Проект "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt Game.cpp GameController.cpp GameEvent.cpp GameRunnigState.cpp GameState.cpp MainMenuState.cpp PauseState.cpp main.cpp
-         Game.cpp
-         GameController.cpp
-         GameEvent.cpp
-         GameRunnigState.cpp
-         GameState.cpp
-         MainMenuState.cpp
-     1>MainMenuState.cpp(22): warning C4065: оператор switch содержит метку "default", но не содержит ни одной метки "case"
-         PauseState.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt GameTimer.cpp
+         GameTimer.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.lib" /MACHINE:X86 /SAFESEH Release\ConsoleConstants.obj
          Release\GameplayConstans.obj
          Release\GameRunnigState.obj
+         Release\GameTimer.obj
          Release\GraficsBuffer.obj
          Release\ConsoleView.obj
          Release\Game.obj
@@ -29,13 +22,14 @@
          Release\Observable.obj
          Release\PauseState.obj
          Release\Point.obj
+         Release\Rect.obj
          Создание кода
          Создание кода завершено
          EventQueue.vcxproj -> D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.exe
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.bsc" /n Release\ConsoleConstants.sbr Release\GameplayConstans.sbr Release\GameRunnigState.sbr Release\GraficsBuffer.sbr Release\ConsoleView.sbr Release\Game.sbr Release\GameController.sbr Release\GameEvent.sbr Release\EventObserver.sbr Release\EventQueue.sbr Release\GameState.sbr Release\Input.sbr Release\main.sbr Release\MainMenuState.sbr Release\Observable.sbr Release\PauseState.sbr Release\Point.sbr
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank3\CrazyTank3\Release\EventQueue.bsc" /n Release\ConsoleConstants.sbr Release\GameplayConstans.sbr Release\GameRunnigState.sbr Release\GameTimer.sbr Release\GraficsBuffer.sbr Release\ConsoleView.sbr Release\Game.sbr Release\GameController.sbr Release\GameEvent.sbr Release\EventObserver.sbr Release\EventQueue.sbr Release\GameState.sbr Release\Input.sbr Release\main.sbr Release\MainMenuState.sbr Release\Observable.sbr Release\PauseState.sbr Release\Point.sbr Release\Rect.sbr
      1>Сборка проекта "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:06.63
+Затраченное время: 00:00:04.21

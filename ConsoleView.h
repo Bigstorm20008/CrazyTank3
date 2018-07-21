@@ -18,16 +18,16 @@ public:
 	
 	void render();
 
-	GraficsBuffer& getBackBuffer();
+	inline GraficsBuffer& getBackBuffer();
 
 private:
 	GraficsBuffer backBuffer_;
 	GraficsBuffer frontBuffer_;
 
-	void prepeareBuffers(const unsigned int& width, const unsigned int& height);
-	void setWindowSizesInSymbols(const unsigned int& width, const unsigned int& height);
-	void moveWindowToScreenCenter();
-	void hideConsoleCursor();
+	inline void prepeareBuffers(const unsigned int& width, const unsigned int& height);
+	inline void setWindowSizesInSymbols(const unsigned int& width, const unsigned int& height);
+	inline void moveWindowToScreenCenter();
+	inline void hideConsoleCursor();
 	
 
 };

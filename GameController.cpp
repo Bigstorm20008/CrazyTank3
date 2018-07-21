@@ -64,7 +64,7 @@ void GameController::gameLoop()
 	{
 		if (_kbhit())
 		{
-			const Key key { static_cast<Key>(_getch()) };
+			const enumarations::Key key { static_cast<enumarations::Key>(_getch()) };
 			input_->inputHandler( key );
 		}
 

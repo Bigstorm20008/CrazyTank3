@@ -10,12 +10,12 @@ namespace events
 	{
 
 	public:
-		GameEvent(const Event& eventId);
+		GameEvent(const enumarations::Event& eventId);
 		virtual ~GameEvent();
 		
-		const Event& getId()const;
+		const enumarations::Event& getId()const;
 	private:
-		const Event id_;
+		const enumarations::Event id_;
 	};
 
 

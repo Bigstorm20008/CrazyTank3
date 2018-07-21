@@ -10,31 +10,31 @@ Input::~Input()
 {
 }
 
-void Input::inputHandler(const Key& key)const
+void Input::inputHandler(const enumarations::Key& key)const
 {
 	switch (key)
 	{
-		case Key::SPACE :
+		case enumarations::Key::SPACE:
 		{
-			eventQueue_->addEvent({ Event::SPACE_KEY_PRESSED });
+			eventQueue_->addEvent({ enumarations::Event::SPACE_KEY_PRESSED });
 			break;
 		}
 
-		case Key::ARROW_UP :
+		case enumarations::Key::ARROW_UP:
 		{
-			eventQueue_->addEvent({ Event::UP_ARROW_KEY_PRESSED });
+			eventQueue_->addEvent({ enumarations::Event::UP_ARROW_KEY_PRESSED });
 			break;
 		}
 
-		case Key::ARROW_LEFT :
+		case enumarations::Key::ARROW_LEFT:
 		{
-			eventQueue_->addEvent({ Event::LEFT_ARROW_KEY_PRESSED });
+			eventQueue_->addEvent({ enumarations::Event::LEFT_ARROW_KEY_PRESSED });
 			break;
 		}
 
-		case Key::ARROW_RIGHT :
+		case enumarations::Key::ARROW_RIGHT:
 		{
-			eventQueue_->addEvent({ Event::RIGHT_ARROW_KEY_PRESSED });
+			eventQueue_->addEvent({ enumarations::Event::RIGHT_ARROW_KEY_PRESSED });
 			break;
 		}
 
@@ -44,24 +44,24 @@ void Input::inputHandler(const Key& key)const
 			break;
 		}*/
 
-		case Key::Q :
-		case Key::q :
+		case enumarations::Key::Q:
+		case enumarations::Key::q:
 		{
-			eventQueue_->addEvent({ Event::QUIT_GAME });
+			eventQueue_->addEvent({ enumarations::Event::QUIT_GAME });
 			break;
 		}
 
-		case Key::S :
-		case Key::s :
+		case enumarations::Key::S:
+		case enumarations::Key::s:
 		{
-			eventQueue_->addEvent({ Event::START_GAME });
+			eventQueue_->addEvent({ enumarations::Event::START_GAME });
 			break;
 		}
 
-		case Key::P:
-		case Key::p:
+		case enumarations::Key::P:
+		case enumarations::Key::p:
 		{
-			eventQueue_->addEvent({ Event::PAUSE_GAME });
+			eventQueue_->addEvent({ enumarations::Event::PAUSE_GAME });
 			break;
 		}
 

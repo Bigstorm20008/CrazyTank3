@@ -17,50 +17,40 @@ Game::~Game()
 
 void Game::initialize()
 {
-	gameState_.reset(new MainMenuState{ *eventQueue_, *graficsBuffer_ });
+	gameState_.reset(new gamestates::MainMenuState{ *eventQueue_, *graficsBuffer_ });
 	gameState_.get()->initialize();
 	isActive_ = true;
-}
-
-
-void Game::update()
-{
-	gameState_->update();
 }
 
 
 void Game::processEvent(const events::GameEvent& gameEvent)
 {
 
-	const Event event = gameEvent.getId();
+	const enumarations::Event event = gameEvent.getId();
 
 	switch (event)
 	{
-		case Event::QUIT_GAME :
+		case enumarations::Event::QUIT_GAME:
 		{
 			isActive_ = false;
 			break;
 		}
 
-		case Event::START_GAME :
-		{
-			if (gameState_)
-			{
-				gameState_.reset({ new GameRunnigState{ *eventQueue_, *graficsBuffer_ } });
-				gameState_->initialize();
-			}
+		case enumarations::Event::START_GAME:
+		{	
+			setState({ new gamestates::GameRunnigState{ *eventQueue_, *graficsBuffer_ } });
 			break;
 		}
 
-		case Event::PAUSE_GAME :
+		/*case enumarations::Event::PAUSE_GAME:
 		{
 			if (gameState_)
 			{
-				gameState_.reset({ new PauseState{ *eventQueue_, *graficsBuffer_ } });
+				gameState_.reset({ new gamestates::PauseState{ *eventQueue_, *graficsBuffer_ } });
 				gameState_->initialize();
 			}
 			break;
-		}
+		}*/
 
 		default:
 		{
@@ -72,10 +62,16 @@ void Game::processEvent(const events::GameEvent& gameEvent)
 }
 
 
-const bool  Game::isActiveState() const
+void Game::setState(gamestates::GameState* gamestate)
 {
-	return isActive_;
+	if (typeid(*gamestate) != typeid(*gameState_))
+	{
+		gameState_.reset(gamestate);
+		gameState_->initialize();
+	}
 }
+
+
 
 
 

@@ -13,7 +13,7 @@ public:
 	explicit Input(EventQueue& eventQueue);
 	~Input();
 
-	void inputHandler(const Key& key)const;
+	void inputHandler(const enumarations::Key& key)const;
 
 private:
 	EventQueue* eventQueue_;

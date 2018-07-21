@@ -1,19 +1,25 @@
 #ifndef POINT_H
 #define POINT_H
 
-class Point
+
+namespace helpers
 {
-public:
-	explicit Point(const int& xPos, const int& yPos);
-	explicit Point();
-	~Point();
 
-	int x;
-	int y;
+	class Point
+	{
+	public:
+		explicit Point(const int& xPos, const int& yPos);
+		explicit Point();
+		~Point();
 
-	const bool operator==(const Point& point)const;
-	const bool operator!=(const Point& point)const;
-};
+		int x;
+		int y;
+
+		const bool operator==(const Point& point)const;
+		const bool operator!=(const Point& point)const;
+	};
+
+} //namespace helpers
 
 #endif // !POINT_H
 

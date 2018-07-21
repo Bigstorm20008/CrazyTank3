@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <memory>
+#include <typeinfo>
 
 #include "EventObserver.h"
 #include "EventQueue.h"
@@ -23,17 +24,33 @@ public:
 
 	void initialize();
 
-	void update();
+	inline void update();
 
-	const bool isActiveState() const;
+	inline const bool isActiveState() const;
 private:
 	EventQueue* const eventQueue_;
 	GraficsBuffer* const graficsBuffer_;
-	std::unique_ptr<GameState> gameState_;
+	std::unique_ptr<gamestates::GameState> gameState_;
 	bool isActive_;
 
 	void processEvent(const events::GameEvent& gameEvent) override;
+	void setState(gamestates::GameState* gamestate);
 };
+
+
+
+inline void Game::update()
+{
+	gameState_->update();
+}
+
+
+inline const bool  Game::isActiveState() const
+{
+	return isActive_;
+}
+
+
 
 #endif // !GAME_H
 

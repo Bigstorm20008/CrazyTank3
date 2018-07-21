@@ -17,10 +17,10 @@ public:
 	EventQueue();
 	~EventQueue();
 
-	void addEvent(const events::GameEvent&& gameEvent);
-	void addEvent(const events::GameEvent& gameEvent);
+	inline void addEvent(const events::GameEvent&& gameEvent);
+	inline void addEvent(const events::GameEvent& gameEvent);
 
-	void sendNextEvent();
+	inline void sendNextEvent();
 
 private:
 	std::queue<const events::GameEvent> eventsQueue_;
