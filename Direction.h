@@ -1,7 +1,7 @@
 #ifndef DIRECTION_H
 #define DIRECTION_H
 
-namespace enumarations
+namespace enumerations
 {
 
 	enum class Direction{
@@ -11,6 +11,6 @@ namespace enumarations
 		RIGHT
 	};
 
-}//namespace enumarations
+}//namespace enumerations
 
 #endif // !DIRECTION_H

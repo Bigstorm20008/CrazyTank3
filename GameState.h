@@ -15,7 +15,7 @@ namespace gamestates
 		virtual ~GameState();
 
 		virtual void initialize() = 0;
-		virtual void processEvent(const enumarations::Event& Event) = 0;
+		virtual void processEvent(const enumerations::Event& Event) = 0;
 		virtual void update() = 0;
 
 	protected:

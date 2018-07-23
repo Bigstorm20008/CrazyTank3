@@ -13,19 +13,13 @@ namespace gamestates
 	}
 
 
-	void MainMenuState::processEvent(const enumarations::Event& event)
-	{
-		/*switch (event)
-		{
-		default:
-			break;
-		}*/
+	void MainMenuState::processEvent(const enumerations::Event& event)
+	{	
 	}
 
 
 	void MainMenuState::update()
 	{
-
 	}
 
 
@@ -36,7 +30,7 @@ namespace gamestates
 		const unsigned int& bufferWidth = graficsBuffer_->getWidth();
 		const unsigned int& bufferHeight = graficsBuffer_->getHeight();
 
-		GameplayConstans gameplayConstants;
+		constants::GameplayConstans gameplayConstants;
 		const std::wstring menuTitle = std::move(gameplayConstants.getMainMenuTitle());
 		helpers::Point centerScreen(bufferWidth / 2, bufferHeight / 2);
 
@@ -45,20 +39,20 @@ namespace gamestates
 		helpers::Point startTextPoint = centerScreen;
 		startTextPoint.x -= offsetToLeft;
 		startTextPoint.y -= offsetToUp;
-		graficsBuffer_->drawText(startTextPoint, enumarations::Direction::RIGHT, menuTitle);
+		graficsBuffer_->drawText(startTextPoint, enumerations::Direction::RIGHT, menuTitle);
 
 		const std::wstring firstMenuElement = std::move(gameplayConstants.getFirstMenuElement());
 		offsetToLeft = firstMenuElement.length() / 2;
 		int offsetToDown = 2;
 		startTextPoint.x = centerScreen.x - offsetToLeft;
 		startTextPoint.y += offsetToDown;
-		graficsBuffer_->drawText(startTextPoint, enumarations::Direction::RIGHT, firstMenuElement);
+		graficsBuffer_->drawText(startTextPoint, enumerations::Direction::RIGHT, firstMenuElement);
 
 		const std::wstring secondMenuElement = std::move(gameplayConstants.getSecondMenuElement());
 		offsetToLeft = secondMenuElement.length() / 2;
 		startTextPoint.x = centerScreen.x - offsetToLeft;
 		startTextPoint.y += offsetToDown;
-		graficsBuffer_->drawText(startTextPoint, enumarations::Direction::RIGHT, secondMenuElement);
+		graficsBuffer_->drawText(startTextPoint, enumerations::Direction::RIGHT, secondMenuElement);
 	}
 
 }//namespace gamestates

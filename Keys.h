@@ -1,7 +1,7 @@
 #ifndef KEYS_H
 #define KEYS_H
 
-namespace enumarations
+namespace enumerations
 {
 
 	enum class Key{
@@ -18,6 +18,6 @@ namespace enumarations
 		p = 112
 	};
 
-}//namespace enumarations
+}//namespace enumerations
 
 #endif // !KEYS_H

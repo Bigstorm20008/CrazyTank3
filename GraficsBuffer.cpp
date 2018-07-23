@@ -63,61 +63,62 @@ const unsigned int& GraficsBuffer::getHeight() const
 }
 
 
-void GraficsBuffer::drawText(const helpers::Point& startPoint, const enumarations::Direction& textDirection, const std::wstring& text)
+void GraficsBuffer::drawText(const helpers::Point& startPoint, const enumerations::Direction& textDirection, const std::wstring& text)
 {
 	const unsigned int textLenght = text.length();
 	helpers::Point currentPoint = startPoint;
-	switch (textDirection){
-	case enumarations::Direction::UP:
-		{
-			unsigned int textIndex = 0;
-			while (textIndex < textLenght)
+	switch (textDirection)
+	{
+		case enumerations::Direction::UP:
 			{
-				drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
-				--currentPoint.y;
-				++textIndex;
+				unsigned int textIndex = 0;
+				while (textIndex < textLenght)
+				{
+					drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
+					--currentPoint.y;
+					++textIndex;
+				}
+				break;
 			}
-			break;
-		}
 
-	case enumarations::Direction::DOWN:
-		{
-			unsigned int textIndex = 0;
-			while (textIndex < textLenght)
+		case enumerations::Direction::DOWN:
 			{
-				drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
-				++currentPoint.y;
-				++textIndex;
+				unsigned int textIndex = 0;
+				while (textIndex < textLenght)
+				{
+					drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
+					++currentPoint.y;
+					++textIndex;
+				}
+				break;
 			}
-			break;
-		}
 
-	case enumarations::Direction::LEFT:
-		{
-			unsigned int textIndex = 0;
-			while (textIndex < textLenght)
+		case enumerations::Direction::LEFT:
 			{
-				drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
-				--currentPoint.x;
-				++textIndex;
+				unsigned int textIndex = 0;
+				while (textIndex < textLenght)
+				{
+					drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
+					--currentPoint.x;
+					++textIndex;
+				}
+				break;
 			}
-			break;
-		}
 
-	case enumarations::Direction::RIGHT:
-		{
-			unsigned int textIndex = 0;
-			while (textIndex < textLenght)
+		case enumerations::Direction::RIGHT:
 			{
-				drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
-				++currentPoint.x;
-				++textIndex;
+				unsigned int textIndex = 0;
+				while (textIndex < textLenght)
+				{
+					drawSymbol(currentPoint.x, currentPoint.y, text[textIndex]);
+					++currentPoint.x;
+					++textIndex;
+				}
+				break;
 			}
-			break;
-		}
 
-		default:
-			break;
+			default:
+				break;
 	}
 }
 

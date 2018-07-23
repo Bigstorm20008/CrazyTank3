@@ -1,7 +1,7 @@
 #ifndef EVENTS_H
 #define EVENTS_H
 
-namespace enumarations
+namespace enumerations
 {
 
 	enum class Event{
@@ -18,7 +18,7 @@ namespace enumarations
 		S_KEY_PRESSED
 	};
 
-}//namespace enumarations
+}//namespace enumerations
 
 #endif // !EVENTS_H
 

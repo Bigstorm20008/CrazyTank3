@@ -4,8 +4,9 @@ namespace gamestates
 {
 
 	GameRunnigState::GameRunnigState(EventQueue& eventQueue, GraficsBuffer& graficsBuffer)
-		: GameState{ eventQueue, graficsBuffer }, gameTimer_{}
+		: GameState{ eventQueue, graficsBuffer }, gameTimer_{}, entityStore_{}
 	{
+		
 	}
 
 
@@ -29,23 +30,24 @@ namespace gamestates
 	}
 
 
-	void GameRunnigState::processEvent(const enumarations::Event& event)
+	void GameRunnigState::processEvent(const enumerations::Event& event)
 	{
 		switch (event)
 		{
-		case enumarations::Event::PAUSE_GAME:
-		{
-			if (isPaused_ == false){
-				isPaused_ = true;
-				gameTimer_->pause();
+			case enumerations::Event::PAUSE_GAME:
+			{
+				if (isPaused_ == false){
+					isPaused_ = true;
+					gameTimer_->pause();
+				}
+				else{
+					gameTimer_->resume();
+					isPaused_ = false;
+				}	
 			}
-			else{
-				gameTimer_->resume();
-				isPaused_ = false;
-			}	
-		}
-		default:
-			break;
+
+			default:
+				break;
 		}
 	}
 
@@ -54,13 +56,16 @@ namespace gamestates
 	{
 		if (isPaused_ == false){
 			graficsBuffer_->clear();
-			std::wstring elapsedTime = gameTimer_->getElapsedTime();
-			std::wstring textToOut = std::move(L"Elapsed time: " + elapsedTime);
-			graficsBuffer_->drawText(helpers::Point(0, 0), enumarations::Direction::RIGHT, textToOut);
+
+			const std::wstring elapsedTime = gameTimer_->getElapsedTime();
+			const std::wstring textToOut = std::move(L"Elapsed time: " + elapsedTime);
+			graficsBuffer_->drawText(helpers::Point(0, 0), enumerations::Direction::RIGHT, textToOut);
+
+			entityStore_.updateEntities();
 		}
 		else{
 			graficsBuffer_->clear();
-			graficsBuffer_->drawText(helpers::Point(0, 0), enumarations::Direction::RIGHT, L"GamePaused");
+			graficsBuffer_->drawText(helpers::Point(0, 0), enumerations::Direction::RIGHT, L"GamePaused");
 		}
 	}
 

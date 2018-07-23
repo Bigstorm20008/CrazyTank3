@@ -34,7 +34,7 @@ void GameController::initialize()
 
 	
 	consoleView_ = new ConsoleView{};
-	ConsoleConstants consoleConstants;
+	constants::ConsoleConstants consoleConstants;
 	consoleView_->initialize( consoleConstants.getDefaultWidth(), consoleConstants.getDefaultHeight() );
 	
 	GraficsBuffer& backBuffer = consoleView_->getBackBuffer();
@@ -64,7 +64,7 @@ void GameController::gameLoop()
 	{
 		if (_kbhit())
 		{
-			const enumarations::Key key { static_cast<enumarations::Key>(_getch()) };
+			const enumerations::Key key{ static_cast<enumerations::Key>(_getch()) };
 			input_->inputHandler( key );
 		}
 
@@ -74,4 +74,10 @@ void GameController::gameLoop()
 
 		isGameActive_ = game_->isActiveState();
 	}
+}
+
+
+void GameController::exitGame()
+{
+	eventQueue_.addEvent({ enumerations::Event::QUIT_GAME });
 }

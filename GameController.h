@@ -18,6 +18,7 @@ public:
 
 	void initialize();
 	const int run();
+	void exitGame();
 	
 private:
 	bool isInitialized_;

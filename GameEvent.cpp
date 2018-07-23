@@ -5,7 +5,7 @@ namespace events
 {
 
 	
-	GameEvent::GameEvent(const enumarations::Event& eventId) : id_{ eventId }
+	GameEvent::GameEvent(const enumerations::Event& eventId) : id_{ eventId }
 	{
 	}
 
@@ -15,7 +15,7 @@ namespace events
 	}
 
 
-	const enumarations::Event& GameEvent::getId() const
+	const enumerations::Event& GameEvent::getId() const
 	{
 		return id_;
 	}

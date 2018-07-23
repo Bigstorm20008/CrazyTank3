@@ -88,6 +88,9 @@
   <ItemGroup>
     <ClInclude Include="ConsoleConstants.h" />
     <ClInclude Include="Direction.h" />
+    <ClInclude Include="DynamicEntity.h" />
+    <ClInclude Include="EntityStore.h" />
+    <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameplayConstans.h" />
     <ClInclude Include="GameRunnigState.h" />
     <ClInclude Include="GameTimer.h" />
@@ -104,12 +107,16 @@
     <ClInclude Include="Keys.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="Observable.h" />
-    <ClInclude Include="PauseState.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="RandomEngine.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="Tank.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleConstants.cpp" />
+    <ClCompile Include="DynamicEntity.cpp" />
+    <ClCompile Include="EntityStore.cpp" />
+    <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameplayConstans.cpp" />
     <ClCompile Include="GameRunnigState.cpp" />
     <ClCompile Include="GameTimer.cpp" />
@@ -125,9 +132,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Observable.cpp" />
-    <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="RandomEngine.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="Tank.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

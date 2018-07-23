@@ -1,23 +1,27 @@
 #include "ConsoleConstants.h"
 
-
-ConsoleConstants::ConsoleConstants()
+namespace constants
 {
-}
+
+	ConsoleConstants::ConsoleConstants()
+	{
+	}
 
 
-ConsoleConstants::~ConsoleConstants()
-{
-}
+	ConsoleConstants::~ConsoleConstants()
+	{
+	}
 
 
-const unsigned int ConsoleConstants::getDefaultWidth()
-{
-	return 40;
-}
+	const unsigned int ConsoleConstants::getDefaultWidth()
+	{
+		return 40;
+	}
 
 
-const unsigned int ConsoleConstants::getDefaultHeight()
-{
-	return 25;
-}
+	const unsigned int ConsoleConstants::getDefaultHeight()
+	{
+		return 25;
+	}
+
+}//namespace constants

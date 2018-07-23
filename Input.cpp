@@ -10,31 +10,31 @@ Input::~Input()
 {
 }
 
-void Input::inputHandler(const enumarations::Key& key)const
+void Input::inputHandler(const enumerations::Key& key)const
 {
 	switch (key)
 	{
-		case enumarations::Key::SPACE:
+		case enumerations::Key::SPACE:
 		{
-			eventQueue_->addEvent({ enumarations::Event::SPACE_KEY_PRESSED });
+			eventQueue_->addEvent({ enumerations::Event::SPACE_KEY_PRESSED });
 			break;
 		}
 
-		case enumarations::Key::ARROW_UP:
+		case enumerations::Key::ARROW_UP:
 		{
-			eventQueue_->addEvent({ enumarations::Event::UP_ARROW_KEY_PRESSED });
+			eventQueue_->addEvent({ enumerations::Event::UP_ARROW_KEY_PRESSED });
 			break;
 		}
 
-		case enumarations::Key::ARROW_LEFT:
+		case enumerations::Key::ARROW_LEFT:
 		{
-			eventQueue_->addEvent({ enumarations::Event::LEFT_ARROW_KEY_PRESSED });
+			eventQueue_->addEvent({ enumerations::Event::LEFT_ARROW_KEY_PRESSED });
 			break;
 		}
 
-		case enumarations::Key::ARROW_RIGHT:
+		case enumerations::Key::ARROW_RIGHT:
 		{
-			eventQueue_->addEvent({ enumarations::Event::RIGHT_ARROW_KEY_PRESSED });
+			eventQueue_->addEvent({ enumerations::Event::RIGHT_ARROW_KEY_PRESSED });
 			break;
 		}
 
@@ -44,24 +44,24 @@ void Input::inputHandler(const enumarations::Key& key)const
 			break;
 		}*/
 
-		case enumarations::Key::Q:
-		case enumarations::Key::q:
+		case enumerations::Key::Q:
+		case enumerations::Key::q:
 		{
-			eventQueue_->addEvent({ enumarations::Event::QUIT_GAME });
+			eventQueue_->addEvent({ enumerations::Event::QUIT_GAME });
 			break;
 		}
 
-		case enumarations::Key::S:
-		case enumarations::Key::s:
+		case enumerations::Key::S:
+		case enumerations::Key::s:
 		{
-			eventQueue_->addEvent({ enumarations::Event::START_GAME });
+			eventQueue_->addEvent({ enumerations::Event::START_GAME });
 			break;
 		}
 
-		case enumarations::Key::P:
-		case enumarations::Key::p:
+		case enumerations::Key::P:
+		case enumerations::Key::p:
 		{
-			eventQueue_->addEvent({ enumarations::Event::PAUSE_GAME });
+			eventQueue_->addEvent({ enumerations::Event::PAUSE_GAME });
 			break;
 		}
 

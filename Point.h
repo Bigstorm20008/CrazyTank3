@@ -17,6 +17,7 @@ namespace helpers
 
 		const bool operator==(const Point& point)const;
 		const bool operator!=(const Point& point)const;
+		const bool operator<(const Point& rhs)const;
 	};
 
 } //namespace helpers

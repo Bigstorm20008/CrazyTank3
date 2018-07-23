@@ -11,7 +11,7 @@
 #include "GameState.h"
 #include "MainMenuState.h"
 #include "GameRunnigState.h"
-#include "PauseState.h"
+
 
 #include "GraficsBuffer.h"
 

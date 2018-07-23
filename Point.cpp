@@ -19,14 +19,33 @@ namespace helpers
 	{
 	}
 
+
 	const bool Point::operator==(const Point& point) const
 	{
 		return ((this->x == point.x) && (this->y == point.y));
 	}
 
+
 	const bool Point::operator!=(const Point& point) const
 	{
 		return (*this == point);
+	}
+
+
+	const bool Point::operator<(const Point& rhs)const
+	{
+		bool isLess = false;
+
+		if (this->y < rhs.y)
+		{
+			isLess = true;
+		}
+		if (this->y == rhs.y)
+		{
+			isLess = this->x < rhs.x;
+		}
+
+		return isLess;
 	}
 
 }//namespace helpers

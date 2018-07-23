@@ -1,8 +1,15 @@
 #ifndef GAME_RUNNING_STATE_H
 #define GAME_RUNNING_STATE_H
 
+#include <vector>
+#include <memory>
+
 #include "GameState.h"
 #include "GameTimer.h"
+#include "GameEntity.h"
+#include "EntityStore.h"
+
+
 
 namespace gamestates
 {
@@ -13,12 +20,16 @@ namespace gamestates
 		virtual ~GameRunnigState();
 
 		void initialize()override;
-		void processEvent(const enumarations::Event& Event)override;
+		void processEvent(const enumerations::Event& Event)override;
 		void update()override;
 
 	private:
 		GameTimer* gameTimer_;
 		bool isPaused_;
+		EntityStore entityStore_;
+
+		
+
 	};
 
 } //namespace gamestates

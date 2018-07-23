@@ -14,7 +14,7 @@ namespace gamestates
 		~MainMenuState();
 
 		void initialize() override;
-		void processEvent(const enumarations::Event& event) override;
+		void processEvent(const enumerations::Event& event) override;
 		void update() override;
 	};
 

@@ -3,16 +3,21 @@
 
 #include <string>
 
-class GameplayConstans
+namespace constants
 {
-public:
-	GameplayConstans();
-	~GameplayConstans();
 
-	const std::wstring getMainMenuTitle()const;
-	const std::wstring getFirstMenuElement()const;
-	const std::wstring getSecondMenuElement()const;
-};
+	class GameplayConstans
+	{
+	public:
+		GameplayConstans();
+		~GameplayConstans();
+
+		const std::wstring getMainMenuTitle()const;
+		const std::wstring getFirstMenuElement()const;
+		const std::wstring getSecondMenuElement()const;
+	};
+
+}//namespace constants
 
 #endif // !GAMEPLAY_CONSTANTS_H
 
