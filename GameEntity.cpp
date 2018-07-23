@@ -3,8 +3,9 @@
 namespace entities
 {
 
-	GameEntity::GameEntity(const helpers::Point& position, const wchar_t& graficsPresent)
-		: position_(position), graficsPresent_(graficsPresent)
+	GameEntity::GameEntity(const helpers::Point& position, const wchar_t& graficsPresent,
+		                   const unsigned int& health)
+		: position_(position), graficsPresent_(graficsPresent), health_(health)
 	{
 	}
 
@@ -12,6 +13,7 @@ namespace entities
 	GameEntity::~GameEntity()
 	{
 	}
+
 
 }//namespace entities
 

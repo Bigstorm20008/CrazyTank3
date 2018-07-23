@@ -31,22 +31,18 @@ void Game::processEvent(const events::GameEvent& gameEvent)
 	switch (event)
 	{
 		case enumerations::Event::QUIT_GAME:
-		{
 			isActive_ = false;
 			break;
-		}
+		
 
-		case enumerations::Event::START_GAME:
-		{	
+		case enumerations::Event::START_GAME:			
 			setState({ new gamestates::GameRunnigState{ *eventQueue_, *graficsBuffer_ } });
 			break;
-		}
+		
 
 		default:
-		{
 			gameState_->processEvent(event);
 			break;
-		}
 	}
 	
 }
@@ -54,8 +50,7 @@ void Game::processEvent(const events::GameEvent& gameEvent)
 
 void Game::setState(gamestates::GameState* gamestate)
 {
-	if (typeid(*gamestate) != typeid(*gameState_))
-	{
+	if (typeid(*gamestate) != typeid(*gameState_)){
 		gameState_.reset(gamestate);
 		gameState_->initialize();
 	}

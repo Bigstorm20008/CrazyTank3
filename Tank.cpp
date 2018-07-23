@@ -2,8 +2,10 @@
 
 namespace entities
 {
-	Tank::Tank(const helpers::Point& position, const wchar_t& graficsPresent, const enumerations::Direction& direction)
-		: entities::DynamicEntity {position, graficsPresent,direction}
+
+	Tank::Tank(const helpers::Point& position, const wchar_t& graficsPresent,
+		       const unsigned int& health, const enumerations::Direction& direction)
+		  : entities::DynamicEntity {position, graficsPresent, health, direction}
 	{
 	}
 
@@ -13,8 +15,9 @@ namespace entities
 	}
 
 
-	void Tank::update()
+	void Tank::update(EntityStore& entityStore)
 	{
-
+		
 	}
-}
+
+}//namespace entities

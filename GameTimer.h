@@ -22,8 +22,6 @@ private:
 	std::chrono::high_resolution_clock::time_point pausedAtTimePoint_;
 	std::chrono::seconds pausedTimeInSeconds_;
 	bool isStarted_;
-	bool isPaused_;
-
 };
 
 #endif // !GAME_TIMER_H

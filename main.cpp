@@ -28,7 +28,7 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 int main()
 {	
 
-	if (SetConsoleCtrlHandler((PHANDLER_ROUTINE)CtrlHandler, TRUE) == true)
+	if (SetConsoleCtrlHandler((PHANDLER_ROUTINE)CtrlHandler, TRUE) == TRUE)
 	{
 		gameController = new GameController;
 		gameController->initialize();

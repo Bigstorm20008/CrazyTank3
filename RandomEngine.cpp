@@ -5,7 +5,8 @@ namespace helpers
 
 	std::shared_ptr<RandomEngine> RandomEngine::m_instance = nullptr;
 
-	RandomEngine::RandomEngine() :m_defaultRandomEngine(std::default_random_engine(static_cast<unsigned int>(time(0))))
+	RandomEngine::RandomEngine() 
+		: m_defaultRandomEngine(std::default_random_engine(static_cast<unsigned int>(time(0))))
 	{
 	}
 

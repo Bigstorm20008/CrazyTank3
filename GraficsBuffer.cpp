@@ -63,7 +63,9 @@ const unsigned int& GraficsBuffer::getHeight() const
 }
 
 
-void GraficsBuffer::drawText(const helpers::Point& startPoint, const enumerations::Direction& textDirection, const std::wstring& text)
+void GraficsBuffer::drawText(const helpers::Point& startPoint, 
+	                         const enumerations::Direction& textDirection,
+							 const std::wstring& text)
 {
 	const unsigned int textLenght = text.length();
 	helpers::Point currentPoint = startPoint;

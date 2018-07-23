@@ -12,7 +12,8 @@ namespace entities
 		public GameEntity
 	{
 	public:
-		DynamicEntity(const helpers::Point& position, const wchar_t& graficsPresent, const enumerations::Direction& direction);
+		DynamicEntity(const helpers::Point& position, const wchar_t& graficsPresent,
+			          const unsigned int& health, const enumerations::Direction& direction);
 		virtual ~DynamicEntity();
 
 		inline const enumerations::Direction& getDirection()const;

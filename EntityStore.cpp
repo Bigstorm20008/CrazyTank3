@@ -49,10 +49,18 @@ void EntityStore::updateEntities()
 
 	while (iter != lastIter)
 	{
-		if (iter->expired() == false)
-		{
-			iter->lock().get()->update();
-			++iter;
+		if (iter->expired() == false){
+
+			auto entity = iter->lock().get();
+
+			if (entity->getHealth() != 0){
+				entity->update(*this);
+				++iter;
+			}
+			else{
+				mapOfEntities_.erase(entity->getPosition());
+				iter = vectorOfEntities_.erase(iter);
+			}			
 		}
 		else{
 			iter = vectorOfEntities_.erase(iter);

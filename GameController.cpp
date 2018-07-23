@@ -1,7 +1,9 @@
 #include "GameController.h"
 
 
-GameController::GameController() : isInitialized_{ false }, isGameActive_{ false }, eventQueue_{}, input_{}, game_{}, consoleView_{}
+GameController::GameController() 
+	: isInitialized_( false ), isGameActive_( false ),
+	  eventQueue_{}, input_{}, game_{}, consoleView_{}
 {
 }
 

@@ -1,7 +1,9 @@
 #include "GameTimer.h"
 
 
-GameTimer::GameTimer() : currentTimePoint_{}, previousTimePoint_{}, pausedAtTimePoint_{}, pausedTimeInSeconds_{ 0 }, isStarted_{ false }, isPaused_{ false }
+GameTimer::GameTimer() : currentTimePoint_{}, previousTimePoint_{},
+                         pausedAtTimePoint_{}, pausedTimeInSeconds_{ 0 },
+						 isStarted_{ false }
 {
 }
 
