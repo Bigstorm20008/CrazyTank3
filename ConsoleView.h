@@ -73,6 +73,13 @@ inline void ConsoleView::moveWindowToScreenCenter()
 	MoveWindow(consoleHwnd, (monitorWidth - consoleWidth) / 2,
 		(monitorHeight - consoleHeight) / 2,
 		consoleWidth, consoleHeight, true);
+
+	long Style = GetWindowLong(consoleHwnd, GWL_STYLE);
+	Style &= ~WS_SIZEBOX;
+	Style &= ~WS_MINIMIZEBOX;
+	Style &= ~WS_MAXIMIZEBOX;
+	SetWindowLong(consoleHwnd, GWL_STYLE, Style);
+
 }
 
 

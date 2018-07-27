@@ -3,7 +3,7 @@
 
 #include "Point.h"
 
-class EntityStore;
+class World;
 
 namespace entities
 {
@@ -15,12 +15,13 @@ namespace entities
 			       const unsigned int& health);
 		virtual ~GameEntity();
 
-		virtual void update(EntityStore& entityStore) = 0;
+		virtual void update(World& world) = 0;
 
 		inline const helpers::Point& getPosition() const;
 		inline const wchar_t& getGraficsPresent()const;
 		inline const unsigned int& getHealth()const;
-	private:
+
+	protected:
 		helpers::Point position_;
 		wchar_t graficsPresent_;
 		unsigned int health_;

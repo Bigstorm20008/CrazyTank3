@@ -16,4 +16,38 @@ namespace entities
 	{
 	}
 
+
+	void DynamicEntity::move(const enumerations::Direction& direction)
+	{
+		using namespace enumerations;
+		using namespace helpers;
+
+		direction_ = direction;
+
+		switch (direction)
+		{
+		case Direction::UP:
+			--position_.y;
+			break;
+
+		case Direction::DOWN:
+			++position_.y;
+			break;
+
+		case Direction::LEFT:
+			--position_.x;
+			break;
+
+		case Direction::RIGHT:
+			++position_.x;
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+
+
 }//namespase entities

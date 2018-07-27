@@ -13,11 +13,5 @@ namespace entities
 	Tank::~Tank()
 	{
 	}
-
-
-	void Tank::update(EntityStore& entityStore)
-	{
-		
-	}
-
+	
 }//namespace entities

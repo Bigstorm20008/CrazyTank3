@@ -9,6 +9,11 @@ namespace helpers
 	public:
 		Rect();
 		~Rect();
+
+		int top;
+		int bottom;
+		int left;
+		int right;
 	};
 
 }//namespace helpers

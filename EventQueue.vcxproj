@@ -86,10 +86,14 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="ConsoleConstants.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="DynamicEntity.h" />
-    <ClInclude Include="EntityStore.h" />
+    <ClInclude Include="EntitiesId.h" />
+    <ClInclude Include="EntityFactory.h" />
+    <ClInclude Include="PlayerTank.h" />
+    <ClInclude Include="World.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameplayConstans.h" />
     <ClInclude Include="GameRunnigState.h" />
@@ -113,9 +117,12 @@
     <ClInclude Include="Tank.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ConsoleConstants.cpp" />
     <ClCompile Include="DynamicEntity.cpp" />
-    <ClCompile Include="EntityStore.cpp" />
+    <ClCompile Include="EntityFactory.cpp" />
+    <ClCompile Include="PlayerTank.cpp" />
+    <ClCompile Include="World.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameplayConstans.cpp" />
     <ClCompile Include="GameRunnigState.cpp" />

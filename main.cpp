@@ -1,4 +1,5 @@
 #include "vld.h"
+#include <thread>
 
 #include "GameController.h"
 
@@ -17,8 +18,8 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 		{
 			gameController->exitGame();
 		}
-		Sleep(20000);
-		return(TRUE);
+		std::this_thread::sleep_for(std::chrono::milliseconds(20000));
+		return TRUE;
 
 	default:
 		return FALSE;
@@ -27,6 +28,7 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 
 int main()
 {	
+	
 
 	if (SetConsoleCtrlHandler((PHANDLER_ROUTINE)CtrlHandler, TRUE) == TRUE)
 	{

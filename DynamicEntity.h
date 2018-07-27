@@ -18,7 +18,9 @@ namespace entities
 
 		inline const enumerations::Direction& getDirection()const;
 
-	private:
+		void move(const enumerations::Direction& direction);
+
+	protected:
 		enumerations::Direction direction_;
 	};
 

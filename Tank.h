@@ -2,7 +2,7 @@
 #define TANK_H
 
 #include "DynamicEntity.h"
-#include "EntityStore.h"
+#include "World.h"
 
 namespace entities
 {
@@ -16,7 +16,7 @@ namespace entities
 
 		virtual ~Tank();
 
-		void update(EntityStore& entityStore)override;
+		virtual void fire() = 0;
 	};
 
 }//namespace entities
