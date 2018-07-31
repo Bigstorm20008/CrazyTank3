@@ -48,4 +48,36 @@ namespace helpers
 		return isLess;
 	}
 
+
+	Point getNextPoint(const Point& currentPoint, const enumerations::Direction& direction, const int& offset)
+	{
+		using namespace enumerations;
+
+		Point nextPoint = currentPoint;
+		
+		switch (direction)
+		{
+			case Direction::UP:
+			    nextPoint.y -= offset;
+				break;
+
+			case Direction::DOWN:
+				nextPoint.y += offset;
+				break;
+
+			case Direction::LEFT:
+				nextPoint.x -= offset;
+				break;
+
+			case Direction::RIGHT:
+				nextPoint.x += offset;
+				break;
+
+			default:
+				break;
+		}
+
+		return std::move(nextPoint);
+	}
+
 }//namespace helpers

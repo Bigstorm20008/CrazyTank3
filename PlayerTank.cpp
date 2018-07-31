@@ -5,8 +5,10 @@ PlayerTank::PlayerTank(const helpers::Point& position,
 	                   const wchar_t& graficsPresent,
 	                   const unsigned int& health,
 	                   const enumerations::Direction& direction,
-	                   const unsigned int& speed) :
-                       DynamicObject{ position, graficsPresent, health, direction, speed }
+					   const unsigned int& speed,
+					   const std::chrono::milliseconds& reloadTimeInMillseconds) :
+					   DynamicObject{ position, graficsPresent, health, direction, speed },
+					   Tank{ reloadTimeInMillseconds }
 {
 }
 
@@ -87,9 +89,9 @@ void PlayerTank::fire(World& world)
 			break;
 	}
 
-	if (world.checkCollisionAtPoint(firstBulletPosition) == true)
-	{
+	if ((isReadyToFire() == true) && (world.checkCollisionAtPoint(firstBulletPosition) == true)){
 		const auto bullet = std::make_shared<Bullet>(firstBulletPosition, '*', 1, direction_, 1);
-		world.storeEntity(bullet);
+		world.storeEntity(bullet);	
+		reloading();
 	}
 }

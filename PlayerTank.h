@@ -15,7 +15,8 @@ public:
 		       const wchar_t& graficsPresent,
 		       const unsigned int& health,
 			   const enumerations::Direction& direction,
-		       const unsigned int& speed);
+		       const unsigned int& speed,
+			   const std::chrono::milliseconds& reloadTimeInMillseconds);
 
 	~PlayerTank();
 

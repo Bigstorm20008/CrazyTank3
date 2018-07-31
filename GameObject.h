@@ -14,6 +14,7 @@ public:
 	inline const wchar_t& getGraficsPresent()const;
 	inline const unsigned int& getHealth()const;
 
+	inline void decreaseHealth();
 protected:
 	helpers::Point position_;
 	wchar_t graficsPresent_;

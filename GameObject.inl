@@ -16,3 +16,10 @@ inline const unsigned int& GameObject::getHealth()const
 {
 	return health_;
 }
+
+
+inline void GameObject::decreaseHealth()
+{
+	if (health_ > 0)
+		--health_;
+}

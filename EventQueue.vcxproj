@@ -91,6 +91,7 @@
     <ClInclude Include="ConsoleConstants.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="DynamicObject.h" />
+    <ClInclude Include="EnemyTank.h" />
     <ClInclude Include="EntitiesId.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameObject.h" />
@@ -122,6 +123,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ConsoleConstants.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
+    <ClCompile Include="EnemyTank.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="PlayerTank.cpp" />

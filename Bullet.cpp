@@ -50,6 +50,12 @@ void Bullet::update(const World& world)
 	if(world.checkCollisionAtPoint(nextPosition) == true)
 		move(direction_);
 	else{
-		health_ = 0;
+		GameObject* object = world.findEntityAtPoint(nextPosition);
+
+		if (object != nullptr){
+			object->decreaseHealth();
+		}
+		
+		decreaseHealth();			
 	}
 }

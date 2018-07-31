@@ -1,6 +1,9 @@
 #ifndef POINT_H
 #define POINT_H
 
+#include <utility>
+
+#include "Direction.h"
 
 namespace helpers
 {
@@ -19,6 +22,8 @@ namespace helpers
 		const bool operator!=(const Point& point)const;
 		const bool operator<(const Point& rhs)const;
 	};
+
+	Point getNextPoint(const Point& currentPoint, const enumerations::Direction& direction, const int& offset);
 
 } //namespace helpers
 
