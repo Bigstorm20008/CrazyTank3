@@ -4,10 +4,13 @@
 #include <map>
 #include <vector>
 #include <memory>
+#include <algorithm>
 
-#include "GameEntity.h"
+
 #include "GraficsBuffer.h"
-#include "Rect.h" 
+#include "Rect.h"
+#include "GameObject.h"
+#include "GameEntity.h"
 
 
 class World
@@ -16,8 +19,8 @@ public:
 	World(const helpers::Rect& worldRect);
 	~World();
 
-	const bool storeEntity(const std::shared_ptr<entities::GameEntity>& gameEntity);
-	std::weak_ptr<entities::GameEntity> findEntityAtPoint(const helpers::Point& point) const;
+	const bool storeEntity(const std::shared_ptr<GameObject>& gameObject);
+	GameObject* findEntityAtPoint(const helpers::Point& point) const;
 	
 	const bool checkCollisionAtPoint(const helpers::Point& point)const;
 
@@ -26,11 +29,12 @@ public:
 
 private:
 	helpers::Rect worldRect_;
-	std::map<helpers::Point, std::shared_ptr<entities::GameEntity>> mapOfEntities_;
-	std::vector<std::weak_ptr<entities::GameEntity>> vectorOfEntities_;
+	//std::map<helpers::Point, std::shared_ptr<GameObject>> mapOfEntities_;
+	std::vector<std::shared_ptr<GameObject>> vectorOfEntities_;
 
 	const bool checkBordersAtPoint(const helpers::Point& point)const;
 	const bool checkEntityAtPoint(const helpers::Point& point) const;
+
 };
 
 #endif // !WORLD_H

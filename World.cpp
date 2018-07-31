@@ -1,72 +1,69 @@
 #include "World.h"
 
 
-World::World(const helpers::Rect& worldRect) : worldRect_{ worldRect }, mapOfEntities_{}, vectorOfEntities_{}
+World::World(const helpers::Rect& worldRect) 
+	: worldRect_{ worldRect }, vectorOfEntities_{}
 {
 }
 
 
 World::~World()
 {
-	mapOfEntities_.clear();
+	
 	vectorOfEntities_.clear();
 }
 
 
 
-const bool World::storeEntity(const std::shared_ptr<entities::GameEntity>& gameEntity)
+const bool World::storeEntity(const std::shared_ptr<GameObject>& gameEntity)
 {
-	std::pair<helpers::Point, std::shared_ptr<entities::GameEntity>> entityToStore;
+	std::pair<helpers::Point, std::shared_ptr<GameObject>> entityToStore;
 	entityToStore.second = gameEntity;
 	entityToStore.first = gameEntity->getPosition();
 
-	const auto result = mapOfEntities_.insert(std::move(entityToStore));
+	//const auto result = mapOfEntities_.insert(std::move(entityToStore));
 
-	if (result.second == true)
-	{
-		vectorOfEntities_.push_back(gameEntity);
-	}
+	
+	
+	vectorOfEntities_.push_back(gameEntity);
+	
 	
 
-	return result.second;
+	return true;
 }
 
-std::weak_ptr<entities::GameEntity> World::findEntityAtPoint(const helpers::Point& point) const
+GameObject* World::findEntityAtPoint(const helpers::Point& point) const
 {
-	return mapOfEntities_.find(point)->second;
+	auto founded = std::find_if(vectorOfEntities_.cbegin(), vectorOfEntities_.cend(), [&](const std::shared_ptr<GameObject> gameObject){return gameObject->getPosition() == point; });
+
+	if (founded != vectorOfEntities_.cend())
+		return founded->get();
+	else
+		return nullptr;
 }
 
 
 const bool World::checkEntityAtPoint(const helpers::Point& point) const
 {
-	const auto founded = mapOfEntities_.find(point);
+	const auto founded = findEntityAtPoint(point);
 
-	return { founded != mapOfEntities_.cend() };
+	return { founded != nullptr };
 }
 
 void World::updateEntities()
 {
-	auto& iter = vectorOfEntities_.begin();
-	const auto& lastIter = vectorOfEntities_.cend();
-
-	while (iter != lastIter)
+	auto iter = vectorOfEntities_.begin();
+	
+	while (iter != vectorOfEntities_.end())
 	{
-		if (iter->expired() == false){
-
-			auto entity = iter->lock().get();
-
-			if (entity->getHealth() != 0){
-				entity->update(*this);
-				++iter;
-			}
-			else{
-				mapOfEntities_.erase(entity->getPosition());
-				iter = vectorOfEntities_.erase(iter);
-			}			
+		auto entity = iter->get();
+		if (entity->getHealth() != 0){
+			dynamic_cast<GameEntity*>(entity)->update(*this);
+			++iter;
 		}
-		else{
-			iter = vectorOfEntities_.erase(iter);
-		}
+		else{		
+  			iter = vectorOfEntities_.erase(iter);
+		}			
 	}
 }
 
@@ -75,8 +72,8 @@ void World::drawEntities(GraficsBuffer& graficsBuffer)
 {
 	for (const auto& entity : vectorOfEntities_)
 	{
-		const auto& enttyPresent = entity.lock().get()->getGraficsPresent();
-		const auto& entityPosition = entity.lock().get()->getPosition();
+		const auto& enttyPresent = entity.get()->getGraficsPresent();
+		const auto& entityPosition = entity.get()->getPosition();
 		graficsBuffer.drawSymbol(entityPosition.x, entityPosition.y, enttyPresent);
 	}
 }

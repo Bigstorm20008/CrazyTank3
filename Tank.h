@@ -1,26 +1,18 @@
 #ifndef TANK_H
 #define TANK_H
 
-#include "DynamicEntity.h"
-#include "World.h"
+class World;
 
-namespace entities
+class Tank
 {
-	class Tank :
-		public DynamicEntity
-	{
-	public:
+public:
+	Tank();
+	virtual ~Tank();
 
-		Tank(const helpers::Point& position, const wchar_t& graficsPresent,
-			 const unsigned int& health, const enumerations::Direction& direction);
-
-		virtual ~Tank();
-
-		virtual void fire() = 0;
-	};
-
-}//namespace entities
+	virtual void fire(World& world) = 0;
+};
 
 #endif // !TANK_H
+
 
 

@@ -1,21 +1,26 @@
 #ifndef BULLET_H
 #define BULLET_H
 
-#include "DynamicEntity.h"
+#include "DynamicObject.h"
+#include "GameEntity.h"
+#include "World.h"
 
-namespace entities
+class Bullet :
+	public DynamicObject, public GameEntity
 {
+public:
+	Bullet(const helpers::Point& position,
+		   const wchar_t& graficsPresent,
+		   const unsigned int& health,
+		   const enumerations::Direction& direction,
+		   const unsigned int& speed);
 
-	class Bullet :
-		public DynamicEntity
-	{
-	public:
-		Bullet(const helpers::Point& position, const wchar_t& graficsPresent,
-			   const unsigned int& health, const enumerations::Direction& direction);
-		virtual ~Bullet();
-	};
+	virtual ~Bullet();
 
-}//namespace entities
+	void move(const enumerations::Direction direction) override;
+	void update(const World& world) override;
+};
+
 #endif // !BULLET_H
 
 

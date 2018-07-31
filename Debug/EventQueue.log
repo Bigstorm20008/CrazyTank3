@@ -1,16 +1,23 @@
-﻿Сборка начата 27.07.2018 9:41:05.
+﻿Сборка начата 31.07.2018 9:21:37.
      1>Проект "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt GameRunnigState.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Game.cpp GameController.cpp GameRunnigState.cpp PlayerTank.cpp main.cpp
+         main.cpp
+         PlayerTank.cpp
          GameRunnigState.cpp
+         GameController.cpp
+         Game.cpp
+         Создание кода...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.lib" /MACHINE:X86 Debug\Bullet.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.lib" /MACHINE:X86 Debug\Actor.obj
+         Debug\Bullet.obj
          Debug\ConsoleConstants.obj
-         Debug\DynamicEntity.obj
-         Debug\EntityFactory.obj
-         Debug\PlayerTank.obj
-         Debug\World.obj
+         Debug\DynamicObject.obj
          Debug\GameEntity.obj
+         Debug\GameObject.obj
+         Debug\PlayerTank.obj
+         Debug\Tank.obj
+         Debug\World.obj
          Debug\GameplayConstans.obj
          Debug\GameRunnigState.obj
          Debug\GameTimer.obj
@@ -29,12 +36,11 @@
          Debug\Point.obj
          Debug\RandomEngine.obj
          Debug\Rect.obj
-         Debug\Tank.obj
          EventQueue.vcxproj -> D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.exe
        BscMake:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.bsc" /n Debug\Bullet.sbr Debug\ConsoleConstants.sbr Debug\DynamicEntity.sbr Debug\EntityFactory.sbr Debug\PlayerTank.sbr Debug\World.sbr Debug\GameEntity.sbr Debug\GameplayConstans.sbr Debug\GameRunnigState.sbr Debug\GameTimer.sbr Debug\GraficsBuffer.sbr Debug\ConsoleView.sbr Debug\Game.sbr Debug\GameController.sbr Debug\GameEvent.sbr Debug\EventObserver.sbr Debug\EventQueue.sbr Debug\GameState.sbr Debug\Input.sbr Debug\main.sbr Debug\MainMenuState.sbr Debug\Observable.sbr Debug\Point.sbr Debug\RandomEngine.sbr Debug\Rect.sbr Debug\Tank.sbr
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"D:\MyGames\CrazyTank3\CrazyTank3\Debug\EventQueue.bsc" /n Debug\Actor.sbr Debug\Bullet.sbr Debug\ConsoleConstants.sbr Debug\DynamicObject.sbr Debug\GameEntity.sbr Debug\GameObject.sbr Debug\PlayerTank.sbr Debug\Tank.sbr Debug\World.sbr Debug\GameplayConstans.sbr Debug\GameRunnigState.sbr Debug\GameTimer.sbr Debug\GraficsBuffer.sbr Debug\ConsoleView.sbr Debug\Game.sbr Debug\GameController.sbr Debug\GameEvent.sbr Debug\EventObserver.sbr Debug\EventQueue.sbr Debug\GameState.sbr Debug\Input.sbr Debug\main.sbr Debug\MainMenuState.sbr Debug\Observable.sbr Debug\Point.sbr Debug\RandomEngine.sbr Debug\Rect.sbr
      1>Сборка проекта "D:\MyGames\CrazyTank3\CrazyTank3\EventQueue.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:04.03
+Затраченное время: 00:00:06.50

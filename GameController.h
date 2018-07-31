@@ -25,7 +25,7 @@ private:
 	bool isGameActive_;
 
 	EventQueue eventQueue_;
-	Input* input_;
+	const Input* input_;
 	Game* game_;
 	ConsoleView* consoleView_;
 

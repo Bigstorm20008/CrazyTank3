@@ -3,7 +3,7 @@
 namespace helpers
 {
 
-	Point::Point(const int& xPos, const int& yPos) : x( xPos ), y( yPos )
+	Point::Point(const int& xPos, const int& yPos) : x{ xPos }, y{ yPos }
 	{
 
 	}

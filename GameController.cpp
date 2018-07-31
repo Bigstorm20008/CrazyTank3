@@ -40,7 +40,7 @@ void GameController::initialize()
 	consoleView_->initialize( consoleConstants.getDefaultWidth(), consoleConstants.getDefaultHeight() );
 	
 	GraficsBuffer& backBuffer = consoleView_->getBackBuffer();
-	game_ = new Game{ eventQueue_ , backBuffer};
+	 game_ = new Game{ eventQueue_ , backBuffer};
 	game_->initialize();
 	eventQueue_.attach( game_ );
 
@@ -62,19 +62,29 @@ const int GameController::run()
 
 void GameController::gameLoop()
 {
+	std::chrono::high_resolution_clock::time_point currentTimePoint;
+	std::chrono::high_resolution_clock::time_point previousTimePoint;
+	std::chrono::milliseconds milliseconds25 { 25 };
+	currentTimePoint = previousTimePoint = std::chrono::high_resolution_clock::now();
+
 	while (isGameActive_ == true)
 	{
-		if (_kbhit())
+		currentTimePoint = std::chrono::high_resolution_clock::now();
+		bool timeToUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(currentTimePoint - previousTimePoint) >= milliseconds25;
+		if (timeToUpdate)
 		{
-			const enumerations::Key key{ static_cast<enumerations::Key>(_getch()) };
-			input_->inputHandler( key );
+			if (_kbhit()){
+				const enumerations::Key key{ static_cast<enumerations::Key>(_getch()) };
+				input_->inputHandler(key);
+			}
+
+			eventQueue_.sendNextEvent();
+			game_->update();
+			consoleView_->render();
+
+			isGameActive_ = game_->isActiveState();
+			previousTimePoint = currentTimePoint;
 		}
-
-		eventQueue_.sendNextEvent();
-		game_->update();
-		consoleView_->render();
-
-		isGameActive_ = game_->isActiveState();
 	}
 }
 

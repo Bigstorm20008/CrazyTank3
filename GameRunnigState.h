@@ -6,9 +6,8 @@
 
 #include "GameState.h"
 #include "GameTimer.h"
-#include "GameEntity.h"
 #include "PlayerTank.h"
-#include "EntityFactory.h"
+
 #include "World.h"
 
 
@@ -29,8 +28,8 @@ namespace gamestates
 		GameTimer* gameTimer_;
 		bool isPaused_;
 		World* world_;
+		std::shared_ptr<PlayerTank> playerTank_;
 
-		std::shared_ptr<entities::GameEntity> playerTank_;
 
 	};
 
