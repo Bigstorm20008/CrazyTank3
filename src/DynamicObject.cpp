@@ -4,13 +4,13 @@ namespace objects
 {
 
 	DynamicObject::DynamicObject(const helpers::Point& position,
-		const wchar_t& graficsPresent,
-		const unsigned int& health,
-		const ObjectId& objectId,
-		const enumerations::Direction& direction,
-		const unsigned int& speed) :
-		GameObject{ position, graficsPresent, health, objectId },
-		direction_{ direction }, speed_{ speed }
+		                         const wchar_t& graficsPresent,
+		                         const unsigned int& health,
+		                         const ObjectId& objectId,
+		                         const enumerations::Direction& direction,
+		                         const unsigned int& speed) :
+		                         GameObject{ position, graficsPresent, health, objectId },
+		                         direction_{ direction }, speed_{ speed }
 	{
 	}
 

@@ -37,10 +37,11 @@ void GameController::initialize()
 	
 	consoleView_ = new ConsoleView{};
 	constants::ConsoleConstants consoleConstants;
-	consoleView_->initialize( consoleConstants.getDefaultWidth(), consoleConstants.getDefaultHeight() );
+	consoleView_->initialize( consoleConstants.getDefaultWidth(),
+		                      consoleConstants.getDefaultHeight() );
 	
 	GraficsBuffer& backBuffer = consoleView_->getBackBuffer();
-	 game_ = new Game{ eventQueue_ , backBuffer};
+	game_ = new Game{ eventQueue_ , backBuffer};
 	game_->initialize();
 	eventQueue_.attach( game_ );
 
@@ -69,15 +70,14 @@ void GameController::gameLoop()
 
 	while (isGameActive_ == true)
 	{
+		if (_kbhit()){
+			const enumerations::Key key{ static_cast<enumerations::Key>(_getch()) };
+			input_->inputHandler(key);
+		}
 		currentTimePoint = std::chrono::high_resolution_clock::now();
-		bool timeToUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(currentTimePoint -                      previousTimePoint) >= milliseconds25;
+		bool timeToUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(currentTimePoint - previousTimePoint) >= milliseconds25;
 		if (timeToUpdate)
 		{
-			if (_kbhit()){
-				const enumerations::Key key{ static_cast<enumerations::Key>(_getch()) };
-				input_->inputHandler(key);
-			}
-
 			eventQueue_.sendNextEvent();
 			game_->update();
 			consoleView_->render();

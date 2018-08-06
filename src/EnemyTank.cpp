@@ -4,16 +4,16 @@ namespace objects
 {
 
 	EnemyTank::EnemyTank(const helpers::Point& position,
-		const wchar_t& graficsPresent,
-		const unsigned int& health,
-		const ObjectId& objectId,
-		const enumerations::Direction& direction,
-		const unsigned int& speed,
-		const std::chrono::milliseconds& reloadTimeInMillseconds,
-		const std::chrono::milliseconds& logicPeriodInMilliseconds) :
-		GameEntity{ logicPeriodInMilliseconds },
-		DynamicObject{ position, graficsPresent, health, objectId, direction, speed },
-		Tank{ reloadTimeInMillseconds }
+		                 const wchar_t& graficsPresent,
+		                 const unsigned int& health,
+		                 const ObjectId& objectId,
+		                 const enumerations::Direction& direction,
+		                 const unsigned int& speed,
+		                 const std::chrono::milliseconds& reloadTimeInMillseconds,
+		                 const std::chrono::milliseconds& logicPeriodInMilliseconds) :
+		                 GameEntity{ logicPeriodInMilliseconds },
+		                 DynamicObject{ position, graficsPresent, health, objectId, direction, speed },
+		                 Tank{ reloadTimeInMillseconds }
 	{
 	}
 
@@ -107,9 +107,10 @@ namespace objects
 				{
 					directionToCheck = static_cast<Direction>(randomGenerator->getRandomInteger(0, directionCount));
 
-					auto result = std::find_if(checkedDirections.cbegin(), checkedDirections.cend(),
-						[&](const Direction& direction){
-						return direction == directionToCheck; });
+					auto result = std::find_if(checkedDirections.cbegin(),
+						                       checkedDirections.cend(),
+						                       [&](const Direction& direction){
+						                       return direction == directionToCheck; });
 
 					if (result == checkedDirections.cend())
 						isDirectionChecked = false;
