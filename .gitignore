@@ -3,3 +3,9 @@ EventQueue.opensdf
 EventQueue.v12.suo
 EventQueue.sdf
 Debug
+diagram/Thumbs.db
+docs/diagram/Thumbs.db
+*.sdf
+*.suo
+*.vcxproj
+*.filters
