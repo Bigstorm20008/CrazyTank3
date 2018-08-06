@@ -30,15 +30,15 @@ void Game::processEvent(const events::GameEvent& gameEvent)
 
 	switch (event)
 	{
-		case enumerations::Event::QUIT_GAME:
+		case enumerations::Event::QUIT_GAME :
 			isActive_ = false;
 			break;
 
-		case enumerations::Event::START_GAME:			
+		case enumerations::Event::START_GAME :			
 			setState({ new gamestates::GameRunnigState{ *eventQueue_, *graficsBuffer_ } });
 			break;
 		
-		default:
+		default :
 			gameState_->processEvent(event);
 			break;
 	}

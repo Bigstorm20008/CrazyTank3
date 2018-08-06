@@ -3,14 +3,14 @@
 namespace objects
 {
 	PlayerTank::PlayerTank(const helpers::Point& position,
-		const wchar_t& graficsPresent,
-		const unsigned int& health,
-		const ObjectId& objectId,
-		const enumerations::Direction& direction,
-		const unsigned int& speed,
-		const std::chrono::milliseconds& reloadTimeInMillseconds) :
-		DynamicObject{ position, graficsPresent, health, objectId, direction, speed },
-		Tank{ reloadTimeInMillseconds }
+		                   const wchar_t& graficsPresent,
+		                   const unsigned int& health,
+		                   const ObjectId& objectId,
+		                   const enumerations::Direction& direction,
+		                   const unsigned int& speed,
+		                   const std::chrono::milliseconds& reloadTimeInMillseconds) :
+		                   DynamicObject{ position, graficsPresent, health, objectId, direction, speed },
+		                   Tank{ reloadTimeInMillseconds }
 	{
 	}
 

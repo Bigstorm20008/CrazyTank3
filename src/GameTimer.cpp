@@ -51,9 +51,6 @@ std::wstring GameTimer::getElapsedTime()
 		currentTimePoint_ = std::chrono::high_resolution_clock::now();
 		std::chrono::seconds gameTimeInSeconds = std::chrono::duration_cast<std::chrono::seconds>(currentTimePoint_ - previousTimePoint_) - pausedTimeInSeconds_;
 
-
-
-
 		std::chrono::hours elapsedHours = std::chrono::duration_cast<std::chrono::hours>(gameTimeInSeconds);
 
 		std::chrono::minutes elapsedMinutes = std::chrono::duration_cast<std::chrono::minutes>(gameTimeInSeconds)-

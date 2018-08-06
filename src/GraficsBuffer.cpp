@@ -42,7 +42,10 @@ void GraficsBuffer::print()const
 
 void GraficsBuffer::drawSymbol(const unsigned int& x, const unsigned int& y, const wchar_t& symbol)
 {
-	bool isValidPoint =  ((x <= width_) && (x >= 0) && (y >= 0) && (y <= height_));
+	bool isValidPoint =  ((x <= width_) &&
+		                  (x >= 0) &&
+						  (y >= 0) &&
+						  (y <= height_));
 
 	if (isValidPoint)
 	{

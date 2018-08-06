@@ -1,5 +1,5 @@
-#ifndef GAMEPLAY_CONSTANTS_H
-#define GAMEPLAY_CONSTANTS_H
+#ifndef STATES_CONSTANTS_H
+#define STATES_CONSTANTS_H
 
 #include <string>
 
@@ -19,7 +19,7 @@ namespace constants
 
 }//namespace constants
 
-#endif // !GAMEPLAY_CONSTANTS_H
+#endif // !STATES_CONSTANTS_H
 
 
 

@@ -9,6 +9,7 @@
 #include "EnemyTank.h"
 #include "WallBlock.h"
 #include "RandomEngine.h"
+#include "ObjectsConstants.h"
 
 class GameObjectFactory
 {
