@@ -5,10 +5,8 @@
 #include <memory>
 
 #include "GameState.h"
-#include "GameTimer.h"
-#include "PlayerTank.h"
-#include "EnemyTank.h"
-#include "World.h"
+#include "Level.h"
+
 
 
 
@@ -25,12 +23,8 @@ namespace gamestates
 		void update()override;
 
 	private:
-		GameTimer* gameTimer_;
+		Level* level_;
 		bool isPaused_;
-		World* world_;
-		std::shared_ptr<PlayerTank> playerTank_;
-
-
 	};
 
 } //namespace gamestates

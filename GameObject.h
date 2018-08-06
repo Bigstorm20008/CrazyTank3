@@ -3,24 +3,47 @@
 
 #include "Point.h"
 
-class GameObject
+namespace objects
 {
-public:
-	GameObject(const helpers::Point& position, const wchar_t& graficsPresent, const unsigned int& health);
 
-	virtual~GameObject() = 0;
+	enum class ObjectId;
 
-	inline const helpers::Point& getPosition() const;
-	inline const wchar_t& getGraficsPresent()const;
-	inline const unsigned int& getHealth()const;
+	class GameObject
+	{
+	public:
+		GameObject(const helpers::Point& position,
+			       const wchar_t& graficsPresent,
+			       const unsigned int& health,
+			       const ObjectId& objectId);
 
-	inline void decreaseHealth();
-protected:
-	helpers::Point position_;
-	wchar_t graficsPresent_;
-	unsigned int health_;
+		virtual~GameObject() = 0;
 
-};
+		inline const helpers::Point& getPosition() const;
+		inline const wchar_t& getGraficsPresent()const;
+		inline const unsigned int& getHealth()const;
+		inline const ObjectId& getId()const;
+
+		inline void decreaseHealth();
+
+	protected:
+		helpers::Point position_;
+		wchar_t graficsPresent_;
+		unsigned int health_;
+		ObjectId objectId_;
+
+	};
+
+	enum class ObjectId{
+		PLAYER_TANK,
+		ENEMY_TANK,
+		PLAYER_BULLET,
+		ENEMY_BULLET,
+		WALL_BLOCK,
+		STRONGHOLD_BLOCK
+	};
+
+
+}//namespace objects
 
 #include "GameObject.inl"
 

@@ -64,13 +64,13 @@ void GameController::gameLoop()
 {
 	std::chrono::high_resolution_clock::time_point currentTimePoint;
 	std::chrono::high_resolution_clock::time_point previousTimePoint;
-	std::chrono::milliseconds milliseconds25 { 50 };
+	std::chrono::milliseconds milliseconds25 { 25 };
 	currentTimePoint = previousTimePoint = std::chrono::high_resolution_clock::now();
 
 	while (isGameActive_ == true)
 	{
 		currentTimePoint = std::chrono::high_resolution_clock::now();
-		bool timeToUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(currentTimePoint - previousTimePoint) >= milliseconds25;
+		bool timeToUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(currentTimePoint -                      previousTimePoint) >= milliseconds25;
 		if (timeToUpdate)
 		{
 			if (_kbhit()){

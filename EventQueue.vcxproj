@@ -92,11 +92,15 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="EnemyTank.h" />
-    <ClInclude Include="EntitiesId.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObjectFactory.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="ObservableWorld.h" />
     <ClInclude Include="PlayerTank.h" />
     <ClInclude Include="Tank.h" />
+    <ClInclude Include="WallBlock.h" />
+    <ClInclude Include="WallCreator.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="GameplayConstans.h" />
     <ClInclude Include="GameRunnigState.h" />
@@ -117,6 +121,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="RandomEngine.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="WorldObserver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
@@ -126,8 +131,13 @@
     <ClCompile Include="EnemyTank.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectFactory.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="ObservableWorld.cpp" />
     <ClCompile Include="PlayerTank.cpp" />
     <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="WallBlock.cpp" />
+    <ClCompile Include="WallCreator.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="GameplayConstans.cpp" />
     <ClCompile Include="GameRunnigState.cpp" />
@@ -147,6 +157,7 @@
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="RandomEngine.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="WorldObserver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameObject.inl" />

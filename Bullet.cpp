@@ -1,61 +1,65 @@
 #include "Bullet.h"
 
-
-Bullet::Bullet(const helpers::Point& position,
-	           const wchar_t& graficsPresent,
-	           const unsigned int& health,
-	           const enumerations::Direction& direction,
-	           const unsigned int& speed) :
-			   DynamicObject{position, graficsPresent,health,direction,speed}
+namespace objects
 {
-}
 
+	Bullet::Bullet(const helpers::Point& position,
+		const wchar_t& graficsPresent,
+		const unsigned int& health,
+		const ObjectId& objectId,
+		const enumerations::Direction& direction,
+		const unsigned int& speed,
+		const std::chrono::milliseconds& logicPeriodInMilliseconds) :
+		GameEntity{ logicPeriodInMilliseconds },
+		DynamicObject{ position, graficsPresent, health, objectId, direction, speed }
 
-Bullet::~Bullet()
-{
-}
-
-
-void Bullet::move(const enumerations::Direction direction)
-{
-	defaultMove(direction);
-}
-
-
-void Bullet::update(const World& world)
-{
-	helpers::Point nextPosition = position_;
-	switch (direction_)
 	{
-		case enumerations::Direction::DOWN :
-			++nextPosition.y;
+	}
+
+
+	Bullet::~Bullet()
+	{
+	}
+
+
+	void Bullet::move(const enumerations::Direction direction)
+	{
+		defaultMove(direction);
+	}
+
+	void Bullet::doLogic(World& world)
+	{
+		helpers::Point nextPosition = helpers::getNextPoint(position_, direction_, speed_);
+
+		if (world.checkCollisionAtPoint(nextPosition) == true){
+			move(direction_);
+		}
+		else{
+			GameObject* object = world.findEntityAtPoint(nextPosition);
+
+			if (object != nullptr){
+				doDamage(*object);
+			}
+			this->decreaseHealth();
+		}
+	}
+
+
+	void Bullet::doDamage(GameObject& object)
+	{
+		switch (this->objectId_)
+		{
+		case ObjectId::ENEMY_BULLET:
+			object.decreaseHealth();
 			break;
 
-		case enumerations::Direction::UP :
-			--nextPosition.y;
-			break;
-
-		case enumerations::Direction::LEFT :
-			--nextPosition.x;
-			break;
-
-		case enumerations::Direction::RIGHT :
-			++nextPosition.x;
+		case ObjectId::PLAYER_BULLET:
+			object.decreaseHealth();
 			break;
 
 		default:
 			break;
-	}
-
-	if(world.checkCollisionAtPoint(nextPosition) == true)
-		move(direction_);
-	else{
-		GameObject* object = world.findEntityAtPoint(nextPosition);
-
-		if (object != nullptr){
-			object->decreaseHealth();
 		}
-		
-		decreaseHealth();			
 	}
+
 }

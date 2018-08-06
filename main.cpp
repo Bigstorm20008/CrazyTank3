@@ -10,19 +10,18 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 
 	switch (fdwCtrlType)
 	{
+		case CTRL_CLOSE_EVENT:
+		case CTRL_BREAK_EVENT:
+		case CTRL_SHUTDOWN_EVENT:
+			if (gameController != nullptr)
+			{
+				gameController->exitGame();
+			}
+			std::this_thread::sleep_for(std::chrono::milliseconds(20000));
+			return TRUE;
 
-	case CTRL_CLOSE_EVENT:
-	case CTRL_BREAK_EVENT:
-	case CTRL_SHUTDOWN_EVENT:
-		if (gameController != nullptr)
-		{
-			gameController->exitGame();
-		}
-		std::this_thread::sleep_for(std::chrono::milliseconds(20000));
-		return TRUE;
-
-	default:
-		return FALSE;
+		default:
+			return FALSE;
 	}
 }
 
@@ -43,7 +42,6 @@ int main()
 	delete gameController;
 	gameController = nullptr;
 
-	
 	return 0;
 }
 
