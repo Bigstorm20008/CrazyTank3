@@ -9,3 +9,9 @@ docs/diagram/Thumbs.db
 *.suo
 *.vcxproj
 *.filters
+*.obj
+*.sbr
+*.bsc
+*.log
+*.pdb
+*.tlog
