@@ -77,12 +77,12 @@ namespace objects
 			std::chrono::milliseconds bulletLogicSpeed{ 15 };
 
 			const auto bullet = std::make_shared<Bullet>(firstBulletPosition,
-				'*',
-				1,
-				ObjectId::PLAYER_BULLET,
-				direction_,
-				1,
-				bulletLogicSpeed);
+				                                        '*',
+				                                         1,
+				                                         ObjectId::PLAYER_BULLET,
+				                                         direction_,
+				                                         1,
+				                                         bulletLogicSpeed);
 			world.addEntity(bullet);
 			reloading();
 		}

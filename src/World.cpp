@@ -10,13 +10,13 @@ World::World(const helpers::Rect& worldRect)
 
 World::~World()
 {
-	actor_.reset();
-	vectorOfEntities_.clear();
+	/*actor_.reset();
+	vectorOfEntities_.clear();*/
 }
 
 
 
-void World::addEntity(const std::shared_ptr<objects::GameObject>& gameEntity)
+void World::addEntity(const std::shared_ptr<objects::GameObject> gameEntity)
 {
 	vectorOfEntities_.push_back(gameEntity);
 }

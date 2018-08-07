@@ -3,7 +3,8 @@
 
 #include "GameController.h"
 
-GameController* gameController = nullptr;
+
+std::unique_ptr<GameController> gameController{};
 
 BOOL CtrlHandler(DWORD fdwCtrlType)
 {
@@ -28,19 +29,15 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 int main()
 {	
 	
-
 	if (SetConsoleCtrlHandler((PHANDLER_ROUTINE)CtrlHandler, TRUE) == TRUE)
 	{
-		gameController = new GameController;
+		gameController.reset(new GameController);
 		gameController->initialize();
 		gameController->run();
 	}
 	else{
 		std::cout << "Could not set control handler" << std::endl;
 	}
-
-	delete gameController;
-	gameController = nullptr;
 
 	return 0;
 }

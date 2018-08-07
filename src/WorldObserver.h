@@ -7,7 +7,7 @@ class WorldObserver
 {
 public:
 	WorldObserver();
-	~WorldObserver();
+	virtual~WorldObserver();
 
 	virtual void processChangedObject(const objects::GameObject& gameObject) = 0;
 };

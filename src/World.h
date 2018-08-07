@@ -23,7 +23,7 @@ public:
 	~World();
 
 	void addActor(const std::shared_ptr<objects::GameObject> actor);
-	void addEntity(const std::shared_ptr<objects::GameObject>& gameObject);
+	void addEntity(const std::shared_ptr<objects::GameObject> gameObject);
 	objects::GameObject* const findEntityAtPoint(const helpers::Point& point) const;
 	
 	const bool checkCollisionAtPoint(const helpers::Point& point)const;

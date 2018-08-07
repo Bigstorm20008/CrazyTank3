@@ -81,5 +81,5 @@ std::wstring GameTimer::getElapsedTime()
 		time.append({ std::to_wstring(elapsedSeconds.count()) });
 	}
 
-	return std::move(time);
+	return time;
 }

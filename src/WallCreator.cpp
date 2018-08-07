@@ -46,5 +46,5 @@ WallCreator::createWall(const World& world)
 		}
 	}
 	
-	return std::move(wall);
+	return wall;
 }
